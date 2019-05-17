@@ -20,5 +20,5 @@
 安装babel---[点击查看文档](https://www.jianshu.com/p/ceb121445a99)
 
 **注意，还需要安装webpack，因为babel-loader是根据webpack标准写的转码器**
-安装webapck[参考文档](https://www.jianshu.com/p/ceb121445a99)
+安装webapck[参考文档](https://www.jianshu.com/p/ceb121445a99)   
 [关于以上问题还可以点击参考该文档](https://www.javascriptcn.com/read-46936.html)
