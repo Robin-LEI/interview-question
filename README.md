@@ -40,7 +40,7 @@
     window.decodeURIComponent(atob(tmp)) // 雷仔
   ```
 
-  > *还可以这样做*
+  > *还可以这样做*  
     >
       ```
         let tmp = btoa(unescape(encodeURIComponent('雷仔'))) // 6Zu35LuU
@@ -66,3 +66,9 @@
       // e.target.result 就是文件的Base64 Data-URI
     }
   ````
+
+### 3.class与普通构造函数有什么区别？
+- class在语法上更加贴合面向对象的写法(class可以说是构造函数的语法糖)
+- class在实现继承上更加易读也更加容易理解
+- 本质上还是语法糖，还是使用prototype
+- class的本质还是函数
