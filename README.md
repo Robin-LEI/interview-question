@@ -74,16 +74,16 @@
 - class的本质还是函数
 
 ### 4.再谈undefined和null的区别
-> - 一般情况下，对于大多数计算机编程语言来说，通常只有一个表示'无'的值，但是对于JavaScript来说有点特殊，居然有两个表示'无'的值，undefined和null，why？
-  - 众所周知，undefined == nul ==> true
-  - 将一个变量赋值为undefined和null，这两种写法几乎等价
+> - 一般情况下，对于大多数计算机编程语言来说，通常只有一个表示'无'的值，但是对于JavaScript来说有点特殊，居然有两个表示'无'的值，undefined和null，why?
+> - 众所周知，undefined == nul ==> true
+> - 将一个变量赋值为undefined和null，这两种写法几乎等价  
   **原因分析**
   - 在《Speaking JavaScript》中写到，在1995年js诞生时，和Java一样，只有一个null表示"无"
   - 根据C语言传统，null被设计为可以自动转为0
   - JavaScript的设计者Brendan Eich觉得这样做还不够
     > - null像在Java里面一样被当做一个对象，但是JavaScript的数据类型分为原始和复杂两种，设计者认为，表示'无'的值最好不是对象
-      - 其次，JavaScript的最初版本并没有包括错误处理机制，发生数据类型不匹配时，通常是自动类型转换或者默默认为失败，Brendan Eich觉得，如果null自动转为0，很不容易发现错误
-      - 综上，Brendan Eich又设计了一个undefined
+    > - 其次，JavaScript的最初版本并没有包括错误处理机制，发生数据类型不匹配时，通常是自动类型转换或者默默认为失败，Brendan Eich觉得，如果null自动转为0，很不容易发现错误
+    > - 综上，Brendan Eich又设计了一个undefined
   **最初设计**
   > JavaScript的最初版本是这样区分的，null是一个表示'无'的对象，转为数值时为0，undefined是一个表示'无'的原始值，转为数值时为NaN
   **目前用法**
