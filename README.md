@@ -88,6 +88,7 @@
 
 **最初设计**
 > JavaScript的最初版本是这样区分的，null是一个表示'无'的对象，转为数值时为0，undefined是一个表示'无'的原始值，转为数值时为NaN
+
 **目前用法**
 > null表示'没有对象'，也就是说该处不应该有值
   *用法：(1)作为函数的参数，表示该函数的参数不是对象;(2)作为对象原型链的终点，Object.getPrototypeOf(Object.prototype) // null*
