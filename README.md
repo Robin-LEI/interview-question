@@ -77,20 +77,22 @@
 > - 一般情况下，对于大多数计算机编程语言来说，通常只有一个表示'无'的值，但是对于JavaScript来说有点特殊，居然有两个表示'无'的值，undefined和null，why?
 > - 众所周知，undefined == nul ==> true
 > - 将一个变量赋值为undefined和null，这两种写法几乎等价  
-  **原因分析**
-  - 在《Speaking JavaScript》中写到，在1995年js诞生时，和Java一样，只有一个null表示"无"
-  - 根据C语言传统，null被设计为可以自动转为0
-  - JavaScript的设计者Brendan Eich觉得这样做还不够
-    > - null像在Java里面一样被当做一个对象，但是JavaScript的数据类型分为原始和复杂两种，设计者认为，表示'无'的值最好不是对象
-    > - 其次，JavaScript的最初版本并没有包括错误处理机制，发生数据类型不匹配时，通常是自动类型转换或者默默认为失败，Brendan Eich觉得，如果null自动转为0，很不容易发现错误
-    > - 综上，Brendan Eich又设计了一个undefined
-  **最初设计**
-  > JavaScript的最初版本是这样区分的，null是一个表示'无'的对象，转为数值时为0，undefined是一个表示'无'的原始值，转为数值时为NaN
-  **目前用法**
-  > null表示'没有对象'，也就是说该处不应该有值
-    *用法：(1)作为函数的参数，表示该函数的参数不是对象;(2)作为对象原型链的终点，Object.getPrototypeOf(Object.prototype) // null*
-    undefined表示'缺少值'，也就是说此处应该有一个值，但是还没有定义，常见下面几种情况：
-    - 变量声明但是没有赋值
-    - 调用函数时，应该提供的参数没有提供，此时该参数等于undefined
-    - 对象没有赋值的属性，默认该属性值为undefined
-    - 函数没有返回值时，默认返回undefined
+
+**原因分析**
+- 在《Speaking JavaScript》中写到，在1995年js诞生时，和Java一样，只有一个null表示"无"
+- 根据C语言传统，null被设计为可以自动转为0
+- JavaScript的设计者Brendan Eich觉得这样做还不够
+  > - null像在Java里面一样被当做一个对象，但是JavaScript的数据类型分为原始和复杂两种，设计者认为，表示'无'的值最好不是对象
+  > - 其次，JavaScript的最初版本并没有包括错误处理机制，发生数据类型不匹配时，通常是自动类型转换或者默默认为失败，Brendan Eich觉得，如果null自动转为0，很不容易发现错误
+  > - 综上，Brendan Eich又设计了一个undefined
+
+**最初设计**
+> JavaScript的最初版本是这样区分的，null是一个表示'无'的对象，转为数值时为0，undefined是一个表示'无'的原始值，转为数值时为NaN
+**目前用法**
+> null表示'没有对象'，也就是说该处不应该有值
+  *用法：(1)作为函数的参数，表示该函数的参数不是对象;(2)作为对象原型链的终点，Object.getPrototypeOf(Object.prototype) // null*
+  undefined表示'缺少值'，也就是说此处应该有一个值，但是还没有定义，常见下面几种情况：
+  - 变量声明但是没有赋值
+  - 调用函数时，应该提供的参数没有提供，此时该参数等于undefined
+  - 对象没有赋值的属性，默认该属性值为undefined
+  - 函数没有返回值时，默认返回undefined
