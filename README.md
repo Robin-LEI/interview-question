@@ -97,3 +97,39 @@
   > - 调用函数时，应该提供的参数没有提供，此时该参数等于undefined
   > - 对象没有赋值的属性，默认该属性值为undefined
   > - 函数没有返回值时，默认返回undefined
+
+### 5.doctype的作用是什么？一共有多少种？
+- 是document type的简写，它不属于html标签，<!DOCTYPE>声明位于文档的最前面，主要是告诉浏览器解析器使用哪种规范来解析页面
+- 该标签可以声明三种DTD(document type definition)类型，分别表示严格版本、过渡版本、基于框架的HTML文档
+  > * html 4.01 strict(该DTD包含所有的html元素和属性，但是不包括展示性的和弃用的元素(如font))，不允许框架集
+      ```
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+      ```
+    * html 4.01 transitional(该DTD包含所有的html元素和属性，包含展示性的弃用的元素)，但是不允许框架集
+      ```
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+      ```
+    * html 4.01 frameset(和html 4.01的过渡版本一样，不一样的是允许框架集)
+      ```
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+      ```
+    ***注意，HTML的框架集分为frameset框架和iframe内嵌框架，[点击查看](https://www.cnblogs.com/dorra/p/7245167.html)***
+
+  > * xhtml 1.0 strict(该DTD包含所有的html元素和属性，但是不包括展示性的以及弃用的元素(如font)，不允许框架集，必须以格式正确的xml格式来编写)
+    ```
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    ```
+    * xhtml 1.0 transitional(该DTD包含所有的html元素和属性，包括展示性的和已经弃用的元素，但是不允许框架集，必须按照格式正确的xml来编写)
+    ```
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    ```
+    * xhtml 1.0 frameset(和xhtml 1.0一样，但是允许框架集)
+    ```
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+    ```
+    **注意，xhtml 1.1 和xhtml 1.0 strict一样，但是允许添加模型(例如提供对ruby的支持)**
+    ```
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+    ```
+- 删除<!DOCTYPE>或者不写会发生什么诡异的事情呢？
+  *在[W3C](https://www.w3.org/)标准出来之前，浏览器对html页面的渲染并没有一个统一的标准，也可以说n分天下，即不同的浏览器都有一套自己的渲染机制，这种渲染方式叫做混杂模式(也叫做怪异模式或者兼容模式)，这种方式使用向后兼容来显示页面，在[W3C](https://www.w3.org/)标准出来之后，浏览器对于html的渲染有了统一的规则，这种方式叫做标准模式(也叫做严格模式)，因此要想提高浏览器的兼容性就必须要重视<!DOCTYPE>*
