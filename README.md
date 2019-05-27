@@ -97,3 +97,21 @@
   > - 调用函数时，应该提供的参数没有提供，此时该参数等于undefined
   > - 对象没有赋值的属性，默认该属性值为undefined
   > - 函数没有返回值时，默认返回undefined
+
+### 5.Vue的父组件和子组件的生命周期钩子的执行顺序是什么?
+- 加载渲染过程
+> 父组件beforeCreate->created->brforeMount->子组件beforeCreate->created->beforeMount->mounted->父组件mounted
+
+- 子组件更新过程
+> 父组件beforeUpdate->子组件beforeUpdate->updated->父组件updated
+
+- 父组件更新过程
+> 父组件beforeUpdate->父组件updated
+  > 当父组件中某一个元素使用了v-if时，且在父组件的mounted生命周期内触发了v-if，这时候的执行顺序为：父组件created-父组件beforeMounted-父组件mounted-父组件beforeupdated-子组件created-子组件beforeMounted-子组件mounted-父组件updated
+
+  > 当父组件中某一个元素使用了v-show时，且在父组件的mounted生命周期内触发了v-show，这时候的执行顺序为：父组件created→父组件beforeMounted→子组件created→子组件beforeMounted→子组件mounted→→父组件mounted→父组件beforeUpdated→父组件updated
+
+- 销毁过程
+> 父组件beforeDestroy->子组件beforeDestroy->destroyed->父组件destroyed
+
+**注意，在Vue项目里，在mounted以前的周期内的变化是不会触发updated的，只有在mounted才可以**
