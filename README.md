@@ -151,3 +151,21 @@
     ```
 - 删除<!DOCTYPE>或者不写会发生什么诡异的事情呢？
   *在[W3C](https://www.w3.org/)标准出来之前，浏览器对html页面的渲染并没有一个统一的标准，也可以说n分天下，即不同的浏览器都有一套自己的渲染机制，这种渲染方式叫做混杂模式(也叫做怪异模式或者兼容模式)，这种方式使用向后兼容来显示页面，在[W3C](https://www.w3.org/)标准出来之后，浏览器对于html的渲染有了统一的规则，这种方式叫做标准模式(也叫做严格模式)，因此要想提高浏览器的兼容性就必须要重视<!DOCTYPE>*
+
+### 7.for循环的三种使用方式
+```
+<script type='text/typescript'>
+    var arr = [1,2,3,4]
+		for(var i=0;i<arr.length;i++){ // 每次都要读取length
+			console.log(arr[i]); //每次获取当前遍历值得时候，还需要去数组中读取
+		}
+		for(var i=0,len=arr.length;i<len;i++){ // 虽然每次不用去读取length了，但是每次仍然需要去读取值
+			console.log(arr[i]);
+		}
+		for(var i=0,val;val=arr[i++];){ // 获取当前值，不用再循环体内定义变量保存了，也不要计算长度了
+			console.log('i=',i);
+			console.log('val=',val);
+		}
+		// 注意，在10万量级，forEach的性能要远远高于for，在100万这个量级，forEach性能和for循环基本一致，在1000万量级，forEach性能要远远低于for循环
+</script>
+```
