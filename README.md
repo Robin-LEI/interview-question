@@ -1,16 +1,17 @@
 # interview-question
-####[1.ES6模块化如何使用？开发环境如何打包?](#practice1)  
-####[2.浏览器是原生支持base 64编码和解码的](#practice2)  
-####[3.class与普通构造函数有什么区别?](#practice3)  
-####[4.再谈undefined和null的区别](#practice4)  
-####[5.Vue的父组件和子组件的生命周期钩子的执行顺序是什么?](#practice5)  
-####[6.doctype的作用是什么?一共有多少种?](#practice6)  
-####[7.for循环的三种使用方式](#practice7)  
-####[8.redux中的reducer为什么最好用纯函数来编写?](#practice8)    
-####[9.箭头函数和普通函数有什么区别?普通构造函数可以使用new，箭头函数可以吗?](#practice9)  
-####[10.内置类之Array](#practice10)
-####[11.对象属性行为之configurable](#practice11)
-####[12.对象属性行为之enumerable](#practice12)
+
+#### [1.ES6模块化如何使用？开发环境如何打包?](#practice1)
+#### [2.浏览器是原生支持base 64编码和解码的](#practice2)
+#### [3.class与普通构造函数有什么区别?](#practice3)
+#### [4.再谈undefined和null的区别](#practice4)
+#### [5.Vue的父组件和子组件的生命周期钩子的执行顺序是什么?](#practice5)
+#### [6.doctype的作用是什么?一共有多少种?](#practice6)
+#### [7.for循环的三种使用方式](#practice7)
+#### [8.redux中的reducer为什么最好用纯函数来编写?](#practice8)
+#### [9.箭头函数和普通函数有什么区别?普通构造函数可以使用new，箭头函数可以吗?](#practice9)
+#### [10.内置类之Array](#practice10)
+#### [11.对象属性行为之configurable](#practice11)
+#### [12.对象属性行为之enumerable](#practice12)
 
 **<span id="practice1">ES6模块化如何使用？开发环境如何打包?</span>**
 > **模块化的基本语法**
