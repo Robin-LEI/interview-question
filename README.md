@@ -10,8 +10,9 @@
 #### [8.redux中的reducer为什么最好用纯函数来编写?](#practice8)
 #### [9.箭头函数和普通函数有什么区别?普通构造函数可以使用new，箭头函数可以吗?](#practice9)
 #### [10.内置类之Array](#practice10)
-#### [11.对象属性行为之configurable](#practice11)
-#### [12.对象属性行为之enumerable](#practice12)
+#### [11.对象属性行为之enumerable](#practice11)
+#### [12.对象属性行为之configurable](#practice12)
+---
 
 **<span id="practice1">ES6模块化如何使用？开发环境如何打包?</span>**
 > **模块化的基本语法**
@@ -212,6 +213,7 @@
 1. Array.prototype是构造函数Array的原型
 2. Array的实例继承与Array.prototype
 3. Array.isArray(Array.prototype) // true
+4. 所有的数组实例都继承了Array.prototype.constructor这个属性，他的值就是Array，表示数组都是由Array构造出来的
 
 **<span id="practice11">可枚举性enumerable</span>**
 1. 用来控制所描述的属性，如果一个属性的enumerable为false，那么下面三个操作取不到该属性：
